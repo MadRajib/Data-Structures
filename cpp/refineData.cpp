@@ -19,14 +19,13 @@ std::string process(const std::string& word){
   }
 
   return line;  
-
 }
 
 
 std::string rtrim(std::string& line){
   std::string whitespaces (" \t\f\v\n\r");
   std::size_t lfound = line.find_last_not_of(whitespaces);
- 
+
   if (lfound!=std::string::npos)
     line.erase(lfound+1);
   else

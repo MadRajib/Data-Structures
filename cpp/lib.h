@@ -9,3 +9,4 @@
 std::string process(const std::string& word);
 std::string rtrim(std::string& line);
 long sumASCII(const std::string& word);
+unsigned int hash(int key,int tableSize);

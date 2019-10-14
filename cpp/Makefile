@@ -1,14 +1,14 @@
 CC = g++ 
 DEPS = lib.h
-OBJ = program.o refineData.o bill.o
+OBJ = program.o refineData.o hashlib.o
 
 %.o: %.c $(DEPS)
 	$(CC) -c -o $@ $< 
 
 all: generate_object program clean
 
-generate_object: bill.cpp refineData.cpp program.cpp
-	$(CC) -c bill.cpp refineData.cpp
+generate_object: hashlib.cpp refineData.cpp program.cpp
+	$(CC) -c hashlib.cpp refineData.cpp
 	$(CC) -c program.cpp
 
 program: $(OBJ) 

@@ -19,7 +19,8 @@ int main(){
     while(getline(f,line)){
         std::string token = process(rtrim(line));
         long key = sumASCII(line);
-        std::cout<<key<<": "<<line<<std::endl;
+        std::cout<<key<<": "<<token<<std::endl;
+        std::cout<<hash(key,10)<<std::endl;
     }
     
     // if could not read from file return -2
