@@ -31,6 +31,9 @@ if __name__ == "__main__":
     flg = False
     R = E = None
     p = 1
+
+
+    # loop 1
     for i in range(k):
         R,E = majority(A)
         if R is not None:
@@ -40,6 +43,11 @@ if __name__ == "__main__":
 
     if flg:
         print("Majority element is :",E)
+       
+        # if in worst case loop 1 runs for k times even when
+        # there is a majority element then the missing prob
+        # will be 0.5*0.5 ... *0.5 k times 
+
         print("Probability of missing it :",p)
     else:
         print("No majority Element")
