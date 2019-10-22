@@ -1,4 +1,17 @@
 import random
+import matplotlib.pyplot as plt
+
+
+# Simple rule
+def ptesting(N,k):
+    for i in range(k):
+        a = random.randint(1,N-1)
+        if N % a == 0:
+            return False
+    return True    
+
+
+# 2nd approach using fermet little theorem
 def mod_exp(b,e,m):
     ret = 1
     while e> 0 :
@@ -22,11 +35,16 @@ if __name__ == "__main__":
     for iterations in range(10,1000,10):
         pcount = 0
         for i in range(iterations):
-            if primalitiyTest(7877):
+            # ret = primalitiyTest(157)
+            ret = ptesting(157,10)
+            if ret:
                 pcount+=1
 
         probs.append((float(pcount)/iterations))
 
-    print(probs[:90])
+    # print(probs[:90])
         
 
+plt.plot(probs)
+plt.ylabel('some numbers')
+plt.show()
